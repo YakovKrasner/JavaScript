@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const day = Number (prompt("Введите число от 1 до 31"));
+        if (day > 0 && day < 31) 
+        {
+            if (day <10) alert (`Число ${day} относится к первой декаде месяца`);
+            if (day >=10 && day <20) alert (`Число ${day} относится ко второй декаде месяца`);
+            if (day >=20) alert (`Число ${day} относится к третей декаде месяца`);
+        }
+        else
+        {
+            alert ("Введено некорректное число");
+        }
+    </script>
+</body>
+</html>
