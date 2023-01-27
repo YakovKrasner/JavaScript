@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const number1 = Number (prompt('Введите первое число'));
+        const number2 = Number (prompt('Введите второе число'));
+        const number3 = Number (prompt('Введите третье число'));
+        let maximalNmber = (arg1,arg2,arg3) => {
+            let maxNum = arg1;
+            if (arg2 > maxNum) maxNum = arg2;
+            if (arg3 > maxNum) maxNum = arg3;
+            alert (`Максимальное число равно ${maxNum}`);
+        }
+
+        maximalNmber (number1,number2,number3);
+    </script>
+
+</body>
+</html>
