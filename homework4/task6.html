@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const getRandomBetween = (min,max) => Math.round (Math.random () * (max - min) + min);
+        const minValue = 0;
+        const maxValue = 9;
+        const rowsMatrix1 = 3;
+        const columnsMatrix1 = 3;
+        const rowsMatrix2 = 3;
+        const columnsMatrix2 = 3;
+        const Matrix1 = [];
+        const Matrix2 = [];
+        const MatrixMultiplication = [];
+        for (i = 0; i < columnsMatrix1; i ++)
+            {    
+                Matrix1[i] = [];
+                for (j = 0; j < rowsMatrix1; j ++)
+                    {
+                        Matrix1[i][j] = getRandomBetween (minValue,maxValue);
+                    }
+            }
+
+        for (i = 0; i < columnsMatrix2; i ++)
+            {    
+                Matrix2[i] = [];
+                for (j = 0; j < rowsMatrix2; j ++)
+                    {
+                        Matrix2 [i][j] = getRandomBetween (minValue,maxValue);
+                    }
+            }
+        
+        console.log (Matrix1);
+        console.log (Matrix2);
+
+        for (i = 0; i < rowsMatrix1; i ++)
+            {    
+                MatrixMultiplication [i] = [];
+                for (j = 0; j < columnsMatrix2; j ++)
+                    {
+                        MatrixMultiplication [i][j] = [0][0];
+                        for (i1 = 0; i1 < columnsMatrix1; i1++)
+                            {
+                                MatrixMultiplication [i][j] = MatrixMultiplication [i][j] + Matrix1[i][i1] * Matrix2 [i1][j];
+                            }
+                    }
+            }
+        console.log (MatrixMultiplication);
+    </script>
+</body>
+</html>
