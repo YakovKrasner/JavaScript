@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let quiz = {
+                    questions: [
+                    {prompted: "What is the capital of France?", choices: ["Paris", "London", "Berlin", "Madrid"]},
+                    {prompted: "What is the largest planet in our solar system?", choices: ["Jupiter", "Mars", "Earth", "Saturn"]},
+                    {prompted: "What is the smallest country in the world?", choices: ["Vatican City", "Monaco", "Nauru", "Tuvalu"]}
+                    ],
+                    correctAnswers: ["paris", "jupiter", "vatican city"]
+                     
+                    };
+                    
+                    let correctAnswersScore = 0;
+                    quiz.questions.forEach(function (element,index) {  
+                    let userAnswer = undefined;
+                    userAnswer = prompt (`${element.prompted} Possible answers: ${element.choices} `).toLowerCase();
+                    if (userAnswer === quiz.correctAnswers[index]) correctAnswersScore +=1;
+                    }
+                    );
+
+                    alert (`Всего правильных ответов - ${correctAnswersScore}`);
+                        
+                        
+    </script>
+</body>
+</html>
