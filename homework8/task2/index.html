@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class = "header1"> О НАС </h1>
+    </header>
+    <div class = "info">
+        <img class = "photo" src="" alt="">
+        <h2></h2>
+        <article></article>
+        <div class = "switchers">
+        <button class="back">Предыдущий</button>
+        <button class="forward">Следующий</button>
+        </div>
+    </div>
+
+    <script>
+       let personNumber = 0;
+       const persons = []
+        persons [0] = carlsson = {
+            photoLink: 'img/carlsson.png',
+            name:  'Карлссон',
+            description: 'В меру упитанный мужчина в самом расцвете сил'
+        },
+        persons [1] = bokk = {
+            photoLink: 'img/bokk.jpg',
+            name:  'Фрекен Бокк',
+            description: 'Злющая домомучительница'
+        }
+        persons [2] = bokk = {
+            photoLink: 'img/ghost.jpg',
+            name:  'Привидение-С-Мотором',
+            description: 'Дикое, но симпатишное'
+        }
+
+        document.querySelector('.photo').src = persons[0].photoLink;
+            document.querySelector('h2').textContent = persons[0].name;
+            document.querySelector('article').textContent = persons[0].description;
+        document.querySelector('.forward').addEventListener('click', () => { if (personNumber < persons.length-1) personNumber++;
+                console.log (personNumber);
+                 });
+        document.querySelector('.back').addEventListener('click', () => { if (personNumber > 0) personNumber--;
+                 });
+        document.querySelector('.switchers').addEventListener('click', () =>{
+            document.querySelector('.photo').src = persons[personNumber].photoLink;
+            document.querySelector('h2').textContent = persons[personNumber].name;
+            document.querySelector('article').textContent = persons[personNumber].description;
+                
+        }
+        );
+
+       
+        
+       
+        
+        
+    </script>
+
+</body>
+</html>
