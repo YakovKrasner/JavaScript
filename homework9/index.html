@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="from" type="text">
+    В инпуте написано: <span></span>
+    
+    <br>
+    
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">
+      Привет :)
+    </div>
+    
+    <br>
+    
+    <form>
+      <label>
+        Первый инпут:
+        <input class="form-control" type="text">
+      </label>
+      <br>
+      <br>
+      <label>
+        Второй инпут:
+        <select class="form-control">
+          <option value=""></option>
+          <option value="1">Один</option>
+          <option value="2">Два</option>
+        </select>
+      </label>
+      <br>
+      <br>
+      <button>Отправить</button>
+    </form>
+<script>
+document.querySelector('#from').addEventListener ('input', () => 
+document.querySelector('span').textContent = document.querySelector('#from').value);
+
+document.querySelector('.messageBtn').addEventListener('click', ()=> {
+            document.querySelector('.message').classList.add ('animate_animated','animate_fadeInLeftBig');
+            document.querySelector('.message').style.visibility = 'visible';
+        }
+    );
+document.querySelector('form').addEventListener('submit', function(submit) {  
+    submit.preventDefault();
+    document.querySelectorAll('.form-control').forEach(element => {
+        if (element.value == '') {
+            element.classList.add('error');
+            element.style.borderColor = 'red';
+        }
+        else
+        {
+            element.classList.remove('error');
+            element.style.borderColor = null;
+        }
+    })
+    if (document.querySelectorAll('.error').length == 0) {this.submit()}
+});
+
+</script>
+</body>
+</html>
